@@ -1,0 +1,96 @@
+/* -----------------------------------------------------
+   Imports
+----------------------------------------------------- */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* -----------------------------------------------------
+   Root settings
+----------------------------------------------------- */
+
+:root {
+  color-scheme: dark;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+
+/* -----------------------------------------------------
+   Body styles
+----------------------------------------------------- */
+
+body {
+  @apply bg-[#020617] text-white m-0 min-w-[320px] min-h-screen;
+}
+
+/* -----------------------------------------------------
+   Background glow (hero bg)
+----------------------------------------------------- */
+
+.app-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -10;
+  background:
+    radial-gradient(circle at top left, rgba(56, 189, 248, 0.25), transparent 60%),
+    radial-gradient(circle at bottom right, rgba(129, 140, 248, 0.3), transparent 60%),
+    radial-gradient(circle at top right, rgba(52, 211, 153, 0.18), transparent 60%);
+}
+
+
+/* -----------------------------------------------------
+   Glassmorphism Card
+----------------------------------------------------- */
+
+.glass-card {
+  @apply border border-white/5 rounded-2xl shadow-[0_18px_55px_rgba(15,23,42,0.85)];
+  background-color: rgba(2, 6, 23, 0.65);
+  -webkit-backdrop-filter: blur(24px); /* Safari/iOS support */
+  backdrop-filter: blur(24px);
+}
+
+
+/* -----------------------------------------------------
+   Typography helpers
+----------------------------------------------------- */
+
+.section-title {
+  @apply text-sm font-semibold tracking-wide uppercase text-slate-400;
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-sky-400 via-indigo-400 to-emerald-400;
+}
+
+
+/* -----------------------------------------------------
+   UI Elements
+----------------------------------------------------- */
+
+.badge {
+  @apply inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-medium bg-white/5 border border-white/10;
+}
+
+.dashed-divider {
+  border-top: 1px dashed rgba(148, 163, 184, 0.3);
+}
+
+
+/* -----------------------------------------------------
+   Remove unnecessary Vite defaults
+----------------------------------------------------- */
+
+/* REMOVE ALL default Vite h1, a, button rules — unnecessary */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
