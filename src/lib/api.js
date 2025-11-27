@@ -58,6 +58,16 @@ export async function getJobResults(jobId) {
     .then((res) => res.data);
 }
 
+export async function deleteJob(jobId) {
+  const res = await fetch(`${API_BASE}/jobs/${jobId}`, {
+    method: "DELETE"
+  });
+
+  if (!res.ok) throw new Error("Failed to delete job");
+  return true;
+}
+
+
 export async function discoverCandidates(jobId) {
   const res = await fetch(`${API_BASE}/discover/${jobId}`);
 
